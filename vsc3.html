@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>v-clock</title>
+    <style>
+        /* 使用属性选择器        */
+        /*说明：但有时添加完毕后变量任会显示（及闪烁问题没解决），这是怎么回事呢？原来是v-cloak的display属性*/
+    [v-clock]{
+        display: none !important;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <h1 v-text="message">Msg1:{{ message }}</h1>
+        <h1 v-once>Msg2:{{ message }}</h1>
+        <h1 v-text="message" v-once>我将被替换</h1> -->
+
+
+        
+    </div>
+<!-- <script src="vue.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script >
+        var d={message :"Hello Vue!" }
+        var app=new Vue({
+            el:'#app',
+            data:{str:"vue里面data的数据"}
+        })
+    </script>
+</body>
+</html>

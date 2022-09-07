@@ -1,0 +1,77 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+ <script src="vue.js"></script> 
+
+<body>
+     <h1>Say hello</h1> 
+    <div id="app">
+        <h1>{{message}}</h1>{{message}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script >
+        var d={message:"Hello Vue!"}
+        var app=new Vue({
+            el:'#app',
+            date:d
+        })
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 父组件 -->
+    
+    <div id="app" >
+        {{message}}
+        <!-- 4.通过使用子组件来赋值 将data中的数据传递给props -->
+        <cpn :cmessage="cmessage"></cpn>
+    </div>
+ 
+    <template id="cpn">
+        <div>
+            我是子组件
+           
+           父组件内容：{{message}} <!--3.这里传入父组件的data数据-->
+             
+        </div>
+    </template>
+    <!-- <script src="js/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        
+// 子组件 子组件里面是props
+const cpn = {
+    template:'#cpn',
+    // 2.使用props来声明需要从父级接受到的数据
+    props:['cmessage']
+    
+}
+ 
+// 父组件
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '父组件啦啦啦'
+            },
+            // 1.在父组件里面注册子组件
+            components:{
+                cpn
+            }
+        })
+    </script>
+</body>
+</html>
