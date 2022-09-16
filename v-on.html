@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>
+            <button v-on:click="number-=1" >-1</button>
+            <span>{{number}}</span>
+            <button v-on:click="number+=1" >+1</button>
+
+
+        </p>
+
+        <p>
+        <button v-on:dblclick="number-=10" >-10</button>
+        <span>{{number}}</span>
+        <button v-on:dblclick="number+=10" >+10</button>
+
+
+        </p>            
+        <p>
+        <button v-on:click="cal(number)" >计算</button>
+        <span>{{number+"!的结果是："+result}} </span>
+
+
+        </p> 
+        
+        {{ message }}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script >
+        var d={
+            number:0,
+            result:NaN,
+            message :"Hello Vue!" }
+
+        var methods={
+            cal:function methods(number) {
+                var l=0;
+                for(var i=1;i<=number;i++)
+                {
+                    if(l==0)l++;
+                    l=l*i;
+                }
+                this.result=l;
+            }
+        }
+    
+        var app=new Vue({
+            el:'#app',
+            data:d,
+            methods:methods
+        })
+    </script>
+</body>
+</html>

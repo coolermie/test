@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p><input v-model="content" type="text">  </p>
+        <h1>{{content}}</h1>
+
+        Username:<input name="user" v-model="username" type="text"><br/>
+        Password:<input name="password" v-model="password" type="password"><br/>
+        <button>登录</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script >
+        var d={
+            content:"Hello vue!!",
+            username:"zhangsan",
+            password:"mima",   
+            methods:{ 
+                vertiy:function(){
+
+                }
+            }
+         }
+
+        var methods={
+            cal:function methods(number) {
+                var l=0;
+                for(var i=1;i<=number;i++)
+                {
+                    if(l==0)l++;
+                    l=l*i;
+                }
+                this.result=l;
+            }
+        }
+    
+        var app=new Vue({
+            el:'#app',
+            data:d
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul v-for="(item,index) in nameList">
+            {{index}}--{{item}}
+        </ul>
+    </div>
+<script src="vue.js"></script>
+    <script >
+        var d={
+            nameList:["洗衣机","上海","5000元"]
+        }
+
+
+        var app=new Vue({
+            el:'#app',
+            data:d
+        })
+    </script>
+</body>
+</html>
